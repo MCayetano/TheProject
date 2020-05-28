@@ -1,0 +1,43 @@
+.header-main {
+    width: 100vw;
+    height: 12vh;
+    display: flex;
+    justify-content: space-between;
+    background-color: whitesmoke;
+}
+
+.app-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Title {
+    text-decoration: none;
+    font-weight: 700;
+    font-family: "'Quicksand', sans-serif";
+    font-size: 25px;
+    letter-spacing: 10px;
+    /* color:rgb(39, 39, 39); */
+    color: orange;
+    margin-left: 25px;
+}
+
+.home-links {
+    font-family: sans-serif;
+    display: flex;
+    width: 300px;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 25px;
+
+    /* background-color: red; */
+
+}
+
+.links {
+    color: orange;
+
+    /* background-color: blue; */
+  
+}

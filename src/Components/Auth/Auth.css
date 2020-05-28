@@ -1,0 +1,26 @@
+.auth-main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* flex-direction: column; */
+    background-image: url("https://previews.123rf.com/images/detshana/detshana1505/detshana150500009/40554412-marble-texture-white-marble-background.jpg");
+    background-size: cover;
+}
+
+.text {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+   font-weight: 700;
+   font-family: "'Quicksand', sans-serif";
+   font-size: 50px;
+   letter-spacing: 0px;
+   color: rgb(218, 19, 19);
+}

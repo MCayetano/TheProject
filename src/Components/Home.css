@@ -1,0 +1,75 @@
+.home-base {
+    display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: stretch;
+	align-content: center;
+}
+
+.main-div {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/6abd54d1-7f55-4af0-abe9-30d90b83663f/d9h4qhq-efc900b0-f8d3-42e5-a408-32778ff4a3b3.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvNmFiZDU0ZDEtN2Y1NS00YWYwLWFiZTktMzBkOTBiODM2NjNmXC9kOWg0cWhxLWVmYzkwMGIwLWY4ZDMtNDJlNS1hNDA4LTMyNzc4ZmY0YTNiMy5qcGcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.BV7Up2xbSD5nuWMM2WhIrFVCRTw9GqlWGJ-lBUzt7vo");
+    /* background-size: cover; */
+    background-position-y: center;
+    background-attachment: fixed;
+}
+
+.word-container {
+   width: 1000px;
+   height: 400px;
+   display: flex;
+   align-items: center;
+   justify-content: center; 
+   background-color: orange;
+   border-color: rgba(230, 230, 230, 0.657);
+    border: 2px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 20px;
+}
+
+@media (max-width: 500px) {
+    .word-container {
+        width: 300px;
+        height: 150px;
+    }
+}
+
+p {
+    font-family: 'Times New Roman', Times, serif;
+    font-variant: normal;
+    font-size: 35px;
+    
+}
+
+.next-word-button {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+    border: none;
+    width: 200px;
+    height: 25px;
+    margin: 15px;
+    border-color: rgba(230, 230, 230, 0.657);
+    border: 2px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.add-word-button {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+    border: none;
+    width: 200px;
+    height: 25px;
+    margin: 15px;
+    border-color: rgba(230, 230, 230, 0.657);
+    border: 2px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

@@ -1,26 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './reset.css'
+import {Route, Switch} from 'react-router-dom';
+import './index.css';
+import Auth from './Components/Auth/Auth';
 
-function App() {
+import Landing from './Components/Landing';
+import Home from './Components/Home';
+// import List from './Components/List';
+
+// import Vocab from './Components/Vocab';
+import Signin from './Components/Auth/Signin';
+import Register from './Components/Auth/Register';
+
+
+
+const App = () => { 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Switch>
+        <Route exact path="/" component={Landing}/>
+        <Route path="/Auth" component={Auth}/>
+        <Route path="/Home" component={Home}/>
+        {/* <Route path="/Study" component={Study}/> */}
+        <Route path="/Signin" component={Signin}/>
+        <Route path="/Register" component={Register}/>
+        {/* <Route path="/Vocab" component={Vocab}/> */}
+      </Switch>
     </div>
-  );
-}
+  )
+};
 
 export default App;

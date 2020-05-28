@@ -1,0 +1,9 @@
+.home-footer {
+    width: 100vw;
+    height: 40px;
+    /* background-color: rgb(13, 94, 175); */
+    background-color: rgb(14, 96, 177);
+    bottom: 0;
+    position: sticky;
+    z-index: 3;
+}
