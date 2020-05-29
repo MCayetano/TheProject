@@ -46,57 +46,75 @@
 // ]
 
 module.exports = {
-    getCars: (req, response) => {
-        response.status(200).send(inventory)
+    getCars: async (req, res) => {
+        const db = req.app.get('db');
+        let inventory = await db.cars.get_cars();
+        res.status(200).send(inventory)
     },
 
-    soldCars: (req, res) => {
+    soldCars: async (req, res) => {
         const {id} = req.params;
-        console.log('paramies', req.params);
-        let newInventory = inventory.filter(car => {
-            console.log('car.id', car.id);
-            console.log('id', id);
-            if(car.id !== +id) {
-                return car;
-            }
-        })
+
         
-        res.status(200).send(newInventory);
+
+        const db = req.app.get('db');
+        let carDelete = await db.cars.delete_car([id]);
+        if(carDelete){
+            let updatedCarList = await db.cars.get_cars();
+            res.status(200).send(updatedCarList)
+        }
+        res.status(200).send("Car Deleted");
     },
 
-    createVehicle: (req, res) => {
+    createVehicle: async (req, res) => {
+        const db = req.app.get('db');
         const {make, model, year, description, price} = req.body
         let newCar = {
-            id: id++,
             price,
             make,
             model,
             year,
-            description
+            description,
+            image
         }
-        inventory.push(newCar)
-        res.status(200).send(inventory)
+        
+        let vehicleCreated = await db.cars.add_car([price, make, model, year, description, image]);
+        if(vehicleCreated){
+            let updatedCarList = await db.cars.get_cars();
+            res.status(200).send(updatedCarList)
+        }
+        res.status(200).send(vehicleCreated)
     },
 
-    updatePrice: (req, res) => {
+    updatePrice: async (req, res) => {
+        const db = req.app.get('db');
         let { id } = req.params;
+        let { price } = req.body;
+        
+        // let index = inventory.findIndex(elem => {
+        //     return +elem.id === +id
+        // })
 
-        let index = inventory.findIndex(elem => {
-            return +elem.id === +id
-        })
+        // let curCar = inventory[index];
 
-        let curCar = inventory[index];
+        // let newCar = {
+        //     id: curCar.id,
+        //     price: req.body.price,
+        //     make: curCar.make,
+        //     model: curCar.model,
+        //     year: curCar.year,
+        //     description: curCar.description
+        // }
+        // inventory.splice(index, 1, newCar)
 
-        let newCar = {
-            id: curCar.id,
-            price: req.body.price,
-            make: curCar.make,
-            model: curCar.model,
-            year: curCar.year,
-            description: curCar.description
-        }
-        inventory.splice(index, 1, newCar)
-        res.status(200).send(inventory)
+    
+
+          let attemptUpdate =  await db.cars.update_price([id, price.toString()]);
+            if(attemptUpdate){
+                let updatedCarList = await db.cars.get_cars();
+                res.status(200).send(updatedCarList)
+            } 
+       
     }
 
 

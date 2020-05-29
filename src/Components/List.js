@@ -28,7 +28,7 @@ class List extends Component {
         <p>{inventory.description}</p>
         <input
           placeholder="Price"
-          value={this.props.price}
+          defaultValue={this.props.price}
           onChange={this.props.handleChange}
         ></input>
         </div>
